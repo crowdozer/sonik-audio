@@ -1,123 +1,79 @@
 ---
 import Layout from '@/layouts/main.astro'
-import Testimonials from '@/components/astro/Testimonials.astro'
-import Pricing from '@/components/astro/Pricing.astro'
 ---
 
-<Layout title="React Mastery">
-	<div class="my-32 space-y-32">
-		<div class="mx-auto max-w-2xl">
-			<div class="flex flex-row gap-8">
-				<div class="grow">
-					<hr class="mt-4" />
+<Layout title="Sonik Audio">
+	<!-- hero -->
+	<div class="mx-auto max-w-4xl text-center">
+		<div class="my-16">
+			<h1 class="my-16 text-8xl underline">sonik audio</h1>
+			<img
+				src="/lambo.png"
+				style="width: 70%; margin: 0 auto; margin-top: -36px;"
+			/>
+		</div>
+	</div>
+
+	<!-- products -->
+	<div class="bg-neutral-900/30 p-16">
+		<div class="mx-auto max-w-4xl">
+			<div class="flex flex-row justify-center gap-8">
+				<div class="card">
+					<div class="card-image"></div>
+					<div class="card-content">
+						<p class="card-title">Premium Quality</p>
+						<p class="card-desc">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						</p>
+						<button class="card-button">Read More</button>
+					</div>
 				</div>
-				<p
-					class="text-lg font-extrabold tracking-tighter text-red-700"
-					style="font-family: Helvetica, sans-serif"
-				>
-					React Mastery
+				<div class="card">
+					<div class="card-image"></div>
+					<div class="card-content">
+						<p class="card-title">Professional Installation</p>
+						<p class="card-desc">
+							Mauris ullamcorper elit sapien, id malesuada nunc finibus id.
+						</p>
+						<button class="card-button">Read More</button>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-image"></div>
+					<div class="card-content">
+						<p class="card-title">Flawless Sound</p>
+						<p class="card-desc">
+							Proin ipsum neque, varius sed finibus nec, faucibus quis elit.
+						</p>
+						<button class="card-button">Read More</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- second sell -->
+	<div class="bg-neutral-950 py-32">
+		<div class="mx-auto max-w-md text-center">
+			<div class="flex flex-col gap-8">
+				<h2 class="text-5xl text-red-600" style="font-family: Calibri">
+					Audiophile Engineering
+				</h2>
+				<p class="text-xl text-neutral-500">
+					Lorem ipsum dolor sit amet, <br />
+					 consectetur adipiscing elit.
 				</p>
-				<div class="grow">
-					<hr class="mt-4" />
-				</div>
-			</div>
-
-			<h1 class="my-16 text-center text-6xl text-blue-600">
-				BUILD YOUR DREAMS
-			</h1>
-
-			<p class="text-center">
-				Welcome to React Mastery - the ultimate React Development SaaS Service
-				for high-performing businesses. Our team of experts and cutting-edge
-				technologies will streamline your app's development, and blow your
-				competitors away.
-			</p>
-		</div>
-
-		<div class="relative h-[calc(400px+8rem)] overflow-x-hidden bg-blue-900">
-			<div class="absolute left-0 right-0 top-[4rem]">
-				<div class="flex flex-row justify-center gap-8">
-					<div class="image-container bg-neutral-100">
-						<div
-							class="image-container-inner !rounded-bl-[50%] !rounded-br-[50%] !rounded-tl-[50%] bg-black"
-						>
-						</div>
-					</div>
-					<div class="image-container bg-blue-950">
-						<div
-							class="image-container-inner !rounded-br-[50%] !rounded-tl-[50%] bg-black"
-						>
-						</div>
-					</div>
-					<div class="image-container bg-neutral-100">
-						<div
-							class="image-container-inner !rounded-bl-[50%] !rounded-br-[50%] !rounded-tr-[50%] bg-black"
-						>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="mx-auto max-w-2xl space-y-8">
-			<h2 class="text-4xl">🚀 Exceeding our client's needs</h2>
-			<div class="grid grid-flow-row grid-cols-3 gap-8">
-				<div class="statistic">
-					<div>
-						<h2 class="text-2xl font-extrabold">500+</h2>
-						<p>happy clients</p>
-					</div>
-				</div>
-				<div class="statistic">
-					<div>
-						<h2 class="text-2xl font-extrabold">2000+</h2>
-						<p>projects delivered</p>
-					</div>
-				</div>
-				<div class="statistic">
-					<div>
-						<h2 class="text-2xl font-extrabold">99.9%</h2>
-						<p>uptime guarantee</p>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<Pricing />
-		<Testimonials />
-
-		<div class="mx-auto max-w-4xl space-y-8">
-			<h2 class="text-4xl">📃 Common Questions</h2>
-			<div class="grid grid-cols-2 gap-8">
-				<div class="space-y-4 p-4">
-					<h2 class="text-lg">What platforms does React Mastery support?</h2>
-					<p>
-						React Mastery seamlessly integrates with all the major platforms,
-						such as Android, iOS and Web.
-					</p>
-				</div>
-				<div class="space-y-4 p-4">
-					<h2 class="text-lg">How does React Mastery improve my workflow?</h2>
-					<p>
-						React Mastery enhances your workflow by streamlining repetitive
-						tasks, simplifying the development process, and providing you with
-						advanced tools for quick and efficient implementation.
-					</p>
-				</div>
-				<div class="space-y-4 p-4">
-					<h2 class="text-lg">Can my team collaborate on React Mastery?</h2>
-					<p>
-						Absolutely, our service is built with collaboration in mind. Your
-						team can work together on projects and share resources, making the
-						development process smoother and more efficient.
-					</p>
-				</div>
-				<div class="space-y-4 p-4">
-					<h2 class="text-lg">Which payment methods do you accept?</h2>
-					<p>
-						We accept all major credit cards, as well as PayPal, Apple Pay, and
-						Google Pay for your convenience.
-					</p>
+				<div class="flex flex-row justify-center gap-4">
+					<button
+						class="rounded-lg bg-neutral-900 px-4 py-2 font-bold hover:bg-neutral-800"
+					>
+						Read More
+					</button>
+					<button
+						class="rounded-lg bg-red-600 px-4 py-2 font-bold hover:bg-red-500"
+					>
+						Schedule
+					</button>
 				</div>
 			</div>
 		</div>
@@ -125,35 +81,23 @@ import Pricing from '@/components/astro/Pricing.astro'
 </Layout>
 
 <style>
-	.image-container {
-		height: 400px;
-		width: 400px;
-		flex-shrink: 0;
-		padding: 2rem;
-		border-radius: 3rem;
+	.card {
+		@apply min-w-[240px] overflow-hidden rounded-xl bg-neutral-950;
 	}
-	.image-container-inner {
-		height: 100%;
-		width: 100%;
-		border-radius: 2rem;
+	.card-image {
+		min-height: 180px;
+		background: black;
 	}
-
-	.statistic {
-		background: rgb(0, 189, 255);
-		background: linear-gradient(
-			142deg,
-			rgba(0, 189, 255, 1) 0%,
-			rgba(95, 9, 121, 1) 30%,
-			rgba(178, 55, 130, 1) 69%,
-			rgba(255, 0, 0, 1) 100%
-		);
-
-		border-radius: 0.75rem;
-		padding: 0.25rem;
-
-		& div {
-			@apply bg-neutral-200 px-8 py-24;
-			border-radius: 0.5rem;
-		}
+	.card-content {
+		@apply space-y-4 p-8;
+	}
+	.card-title {
+		@apply text-lg font-bold;
+	}
+	.card-desc {
+		@apply text-neutral-400;
+	}
+	.card-button {
+		@apply rounded-lg bg-neutral-900 px-4 py-2 text-sm text-neutral-100 hover:bg-neutral-800;
 	}
 </style>

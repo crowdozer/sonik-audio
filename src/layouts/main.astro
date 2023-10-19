@@ -20,40 +20,91 @@ const isProd = import.meta.env.MODE === 'production'
 		<title>{title} - crwdzr.io</title>
 		{isProd && <Analytics {title} />}
 	</head>
-	<body>
-		<slot />
-
-		<footer class="space-y-8 py-16">
-			<div class="mx-auto max-w-4xl text-center">
-				<div class="flex flex-row justify-center gap-4">
-					<a href="https://www.x.com/" class="self-center" title="Twitter">
-						<Icon name="mdi:twitter" width="2rem" />
-					</a>
-					<a
-						href="https://www.facebook.com/"
-						class="self-center"
-						title="Facebook"
-					>
-						<Icon name="mdi:facebook" width="2rem" />
-					</a>
-					<a
-						href="https://www.discord.com/"
-						class="self-center"
-						title="Discord"
-					>
-						<Icon name="mdi:discord" width="2rem" />
-					</a>
+	<body class="min-h-screen bg-neutral-950">
+		<div class="flex min-h-screen flex-col">
+			<!-- navbar -->
+			<nav class="bg-neutral-900/30">
+				<div class="mx-auto max-w-4xl p-4">
+					<div class="flex flex-row">
+						<a class="logo font-extrabold" href="/">sonik</a>
+						<div class="grow"></div>
+						<div class="flex flex-row gap-4">
+							<a href="/about">About</a>
+							<a href="/contact">Contact</a>
+							<a href="/schedule" class="bg-red-700 font-bold hover:bg-red-800">
+								Schedule
+							</a>
+						</div>
+					</div>
 				</div>
+			</nav>
+
+			<!-- content -->
+			<div class="grow">
+				<slot />
 			</div>
 
-			<div class="text-center">
-				<p class="text-sm font-bold">
-					© 2023 React Mastery. All Rights Reserved.
-				</p>
-				<p class="text-sm text-neutral-400">
-					Generated on Wednesday, October 18, 2023
-				</p>
-			</div>
-		</footer>
+			<!-- footer -->
+			<footer class="bg-neutral-900/30">
+				<div class="mx-auto max-w-4xl space-y-8 p-8">
+					<div class="flex flex-row gap-16">
+						<div class="flex grow flex-col gap-4">
+							<h2 class="text-neutral-300">Products</h2>
+							<p class="text-sm font-bold text-neutral-400">Speakers</p>
+							<p class="text-sm font-bold text-neutral-400">Amplifiers</p>
+							<p class="text-sm font-bold text-neutral-400">Wiring</p>
+							<p class="text-sm font-bold text-neutral-400">Batteries</p>
+						</div>
+						<div class="flex grow flex-col gap-4">
+							<h2 class="text-neutral-300">Company</h2>
+							<p class="text-sm font-bold text-neutral-400">About</p>
+							<p class="text-sm font-bold text-neutral-400">Careers</p>
+							<p class="text-sm font-bold text-neutral-400">Mission</p>
+							<p class="text-sm font-bold text-neutral-400">Crew</p>
+						</div>
+						<div class="flex grow flex-col gap-4">
+							<h2 class="text-neutral-300">Info</h2>
+							<p class="text-sm font-bold text-neutral-400">FAQ</p>
+							<p class="text-sm font-bold text-neutral-400">Contact</p>
+							<p class="text-sm font-bold text-neutral-400">Location</p>
+							<p class="text-sm font-bold text-neutral-400">Terms</p>
+						</div>
+					</div>
+					<hr />
+					<div class="flex flex-row">
+						<p class="text-sm font-bold text-neutral-400">(c) nobody 2023</p>
+						<div class="grow"></div>
+						<div class="flex flex-row gap-4">
+							<a href="https://www.x.com/" class="self-center" title="Twitter">
+								<Icon name="mdi:twitter" width="2rem" />
+							</a>
+							<a
+								href="https://www.facebook.com/"
+								class="self-center"
+								title="Facebook"
+							>
+								<Icon name="mdi:facebook" width="2rem" />
+							</a>
+							<a
+								href="https://www.discord.com/"
+								class="self-center"
+								title="Discord"
+							>
+								<Icon name="mdi:discord" width="2rem" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
 	</body>
 </html>
+
+<style>
+	.logo {
+		font-family: Audiowide, sans-serif;
+	}
+	nav a {
+		@apply px-2 py-1 text-sm hover:text-neutral-300;
+	}
+</style>

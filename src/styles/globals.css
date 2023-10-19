@@ -2,17 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: Audiowide;
+	src: url(/Audiowide-Regular.ttf);
+}
+
 /**
  * Basic markup styling
  */
 
 *::selection {
-	@apply bg-teal-500/30 text-neutral-100;
+	@apply bg-red-500/30 text-neutral-100;
 }
 
 html,
 body {
-	@apply bg-neutral-100 text-neutral-900;
+	@apply bg-neutral-900 text-white;
+	font-family: 'Calibri', sans-serif;
 }
 
 /* Font cursor override */
@@ -36,7 +42,7 @@ h4,
 h5,
 h6 {
 	@apply font-bold;
-	font-family: Helvetica, sans-serif;
+	font-family: Audiowide, sans-serif;
 }
 
 h1 {
@@ -49,7 +55,7 @@ h2 {
 
 /* Dividers */
 hr {
-	@apply border-teal-700;
+	@apply border-red-700;
 }
 
 /* Lists */

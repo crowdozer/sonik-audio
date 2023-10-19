@@ -1,0 +1,159 @@
+---
+import Layout from '@/layouts/main.astro'
+import Testimonials from '@/components/astro/Testimonials.astro'
+import Pricing from '@/components/astro/Pricing.astro'
+---
+
+<Layout title="React Mastery">
+	<div class="my-32 space-y-32">
+		<div class="mx-auto max-w-2xl">
+			<div class="flex flex-row gap-8">
+				<div class="grow">
+					<hr class="mt-4" />
+				</div>
+				<p
+					class="text-lg font-extrabold tracking-tighter text-red-700"
+					style="font-family: Helvetica, sans-serif"
+				>
+					React Mastery
+				</p>
+				<div class="grow">
+					<hr class="mt-4" />
+				</div>
+			</div>
+
+			<h1 class="my-16 text-center text-6xl text-blue-600">
+				BUILD YOUR DREAMS
+			</h1>
+
+			<p class="text-center">
+				Welcome to React Mastery - the ultimate React Development SaaS Service
+				for high-performing businesses. Our team of experts and cutting-edge
+				technologies will streamline your app's development, and blow your
+				competitors away.
+			</p>
+		</div>
+
+		<div class="relative h-[calc(400px+8rem)] overflow-x-hidden bg-blue-900">
+			<div class="absolute left-0 right-0 top-[4rem]">
+				<div class="flex flex-row justify-center gap-8">
+					<div class="image-container bg-neutral-100">
+						<div
+							class="image-container-inner !rounded-bl-[50%] !rounded-br-[50%] !rounded-tl-[50%] bg-black"
+						>
+						</div>
+					</div>
+					<div class="image-container bg-blue-950">
+						<div
+							class="image-container-inner !rounded-br-[50%] !rounded-tl-[50%] bg-black"
+						>
+						</div>
+					</div>
+					<div class="image-container bg-neutral-100">
+						<div
+							class="image-container-inner !rounded-bl-[50%] !rounded-br-[50%] !rounded-tr-[50%] bg-black"
+						>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="mx-auto max-w-2xl space-y-8">
+			<h2 class="text-4xl">🚀 Exceeding our client's needs</h2>
+			<div class="grid grid-flow-row grid-cols-3 gap-8">
+				<div class="statistic">
+					<div>
+						<h2 class="text-2xl font-extrabold">500+</h2>
+						<p>happy clients</p>
+					</div>
+				</div>
+				<div class="statistic">
+					<div>
+						<h2 class="text-2xl font-extrabold">2000+</h2>
+						<p>projects delivered</p>
+					</div>
+				</div>
+				<div class="statistic">
+					<div>
+						<h2 class="text-2xl font-extrabold">99.9%</h2>
+						<p>uptime guarantee</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<Pricing />
+		<Testimonials />
+
+		<div class="mx-auto max-w-4xl space-y-8">
+			<h2 class="text-4xl">📃 Common Questions</h2>
+			<div class="grid grid-cols-2 gap-8">
+				<div class="space-y-4 p-4">
+					<h2 class="text-lg">What platforms does React Mastery support?</h2>
+					<p>
+						React Mastery seamlessly integrates with all the major platforms,
+						such as Android, iOS and Web.
+					</p>
+				</div>
+				<div class="space-y-4 p-4">
+					<h2 class="text-lg">How does React Mastery improve my workflow?</h2>
+					<p>
+						React Mastery enhances your workflow by streamlining repetitive
+						tasks, simplifying the development process, and providing you with
+						advanced tools for quick and efficient implementation.
+					</p>
+				</div>
+				<div class="space-y-4 p-4">
+					<h2 class="text-lg">Can my team collaborate on React Mastery?</h2>
+					<p>
+						Absolutely, our service is built with collaboration in mind. Your
+						team can work together on projects and share resources, making the
+						development process smoother and more efficient.
+					</p>
+				</div>
+				<div class="space-y-4 p-4">
+					<h2 class="text-lg">Which payment methods do you accept?</h2>
+					<p>
+						We accept all major credit cards, as well as PayPal, Apple Pay, and
+						Google Pay for your convenience.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.image-container {
+		height: 400px;
+		width: 400px;
+		flex-shrink: 0;
+		padding: 2rem;
+		border-radius: 3rem;
+	}
+	.image-container-inner {
+		height: 100%;
+		width: 100%;
+		border-radius: 2rem;
+	}
+
+	.statistic {
+		background: rgb(0, 189, 255);
+		background: linear-gradient(
+			142deg,
+			rgba(0, 189, 255, 1) 0%,
+			rgba(95, 9, 121, 1) 30%,
+			rgba(178, 55, 130, 1) 69%,
+			rgba(255, 0, 0, 1) 100%
+		);
+
+		border-radius: 0.75rem;
+		padding: 0.25rem;
+
+		& div {
+			@apply bg-neutral-200 px-8 py-24;
+			border-radius: 0.5rem;
+		}
+	}
+</style>

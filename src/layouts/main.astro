@@ -1,0 +1,59 @@
+---
+import '@/styles/globals.css'
+import Analytics from '@/components/astro/Analytics.astro'
+import { Icon } from 'astro-icon'
+
+interface Props {
+	title: string
+}
+
+const { title } = Astro.props
+const isProd = import.meta.env.MODE === 'production'
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} - crwdzr.io</title>
+		{isProd && <Analytics {title} />}
+	</head>
+	<body>
+		<slot />
+
+		<footer class="space-y-8 py-16">
+			<div class="mx-auto max-w-4xl text-center">
+				<div class="flex flex-row justify-center gap-4">
+					<a href="https://www.x.com/" class="self-center" title="Twitter">
+						<Icon name="mdi:twitter" width="2rem" />
+					</a>
+					<a
+						href="https://www.facebook.com/"
+						class="self-center"
+						title="Facebook"
+					>
+						<Icon name="mdi:facebook" width="2rem" />
+					</a>
+					<a
+						href="https://www.discord.com/"
+						class="self-center"
+						title="Discord"
+					>
+						<Icon name="mdi:discord" width="2rem" />
+					</a>
+				</div>
+			</div>
+
+			<div class="text-center">
+				<p class="text-sm font-bold">
+					© 2023 React Mastery. All Rights Reserved.
+				</p>
+				<p class="text-sm text-neutral-400">
+					Generated on Wednesday, October 18, 2023
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

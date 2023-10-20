@@ -1,0 +1,48 @@
+---
+import { Button } from '@/components/react/ui'
+---
+
+<nav class="bg-neutral-900/30">
+	<div class="mx-auto max-w-4xl p-4">
+		<div class="flex flex-row">
+			<a href="/">
+				<Button
+					classes={{
+						button:
+							'font-[Audiowide] logo text-lg border-transparent px-4 py-2 font-extrabold',
+					}}
+				>
+					sonik
+				</Button>
+			</a>
+			<div class="grow"></div>
+			<div class="flex flex-row gap-2">
+				<div class="hidden lg:contents">
+					<Button classes={{ button: 'border-transparent text-sm px-4 py-2' }}>
+						About
+					</Button>
+				</div>
+				<div class="hidden lg:contents">
+					<Button classes={{ button: 'border-transparent text-sm px-4 py-2' }}>
+						Contact
+					</Button>
+				</div>
+				<Button
+					classes={{
+						button:
+							'border-transparent bg-red-600 text-sm px-4 py-2 hover:bg-red-700',
+					}}
+				>
+					Newsletter
+				</Button>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<style>
+	nav a,
+	nav button {
+		align-self: center;
+	}
+</style>

@@ -1,103 +1,16 @@
 ---
 import Layout from '@/layouts/main.astro'
+import Hero from '@/components/astro/Hero.astro'
+import Products from '@/components/astro/Products.astro'
+import Engineering from '@/components/astro/Engineering.astro'
+import News from '@/components/astro/News.astro'
+import LocatorJoin from '@/components/astro/LocatorJoin.astro'
 ---
 
 <Layout title="Sonik Audio">
-	<!-- hero -->
-	<div class="mx-auto max-w-4xl text-center">
-		<div class="my-16">
-			<h1 class="my-16 text-8xl underline">sonik audio</h1>
-			<img
-				src="/lambo.png"
-				style="width: 70%; margin: 0 auto; margin-top: -36px;"
-			/>
-		</div>
-	</div>
-
-	<!-- products -->
-	<div class="bg-neutral-900/30 p-16">
-		<div class="mx-auto max-w-4xl">
-			<div class="flex flex-row justify-center gap-8">
-				<div class="card">
-					<div class="card-image"></div>
-					<div class="card-content">
-						<p class="card-title">Premium Quality</p>
-						<p class="card-desc">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-						</p>
-						<button class="card-button">Read More</button>
-					</div>
-				</div>
-				<div class="card">
-					<div class="card-image"></div>
-					<div class="card-content">
-						<p class="card-title">Professional Installation</p>
-						<p class="card-desc">
-							Mauris ullamcorper elit sapien, id malesuada nunc finibus id.
-						</p>
-						<button class="card-button">Read More</button>
-					</div>
-				</div>
-				<div class="card">
-					<div class="card-image"></div>
-					<div class="card-content">
-						<p class="card-title">Flawless Sound</p>
-						<p class="card-desc">
-							Proin ipsum neque, varius sed finibus nec, faucibus quis elit.
-						</p>
-						<button class="card-button">Read More</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- second sell -->
-	<div class="bg-neutral-950 py-32">
-		<div class="mx-auto max-w-md text-center">
-			<div class="flex flex-col gap-8">
-				<h2 class="text-5xl text-red-600" style="font-family: Calibri">
-					Audiophile Engineering
-				</h2>
-				<p class="text-xl text-neutral-500">
-					Lorem ipsum dolor sit amet, <br />
-					 consectetur adipiscing elit.
-				</p>
-				<div class="flex flex-row justify-center gap-4">
-					<button
-						class="rounded-lg bg-neutral-900 px-4 py-2 font-bold hover:bg-neutral-800"
-					>
-						Read More
-					</button>
-					<button
-						class="rounded-lg bg-red-600 px-4 py-2 font-bold hover:bg-red-500"
-					>
-						Schedule
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
+	<Hero />
+	<Products />
+	<Engineering />
+	<LocatorJoin />
+	<News />
 </Layout>
-
-<style>
-	.card {
-		@apply min-w-[240px] overflow-hidden rounded-xl bg-neutral-950;
-	}
-	.card-image {
-		min-height: 180px;
-		background: black;
-	}
-	.card-content {
-		@apply space-y-4 p-8;
-	}
-	.card-title {
-		@apply text-lg font-bold;
-	}
-	.card-desc {
-		@apply text-neutral-400;
-	}
-	.card-button {
-		@apply rounded-lg bg-neutral-900 px-4 py-2 text-sm text-neutral-100 hover:bg-neutral-800;
-	}
-</style>

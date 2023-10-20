@@ -18,7 +18,7 @@
 html,
 body {
 	@apply bg-neutral-900 text-white;
-	font-family: 'Calibri', sans-serif;
+	font-family: 'Inter', sans-serif;
 }
 
 /* Font cursor override */

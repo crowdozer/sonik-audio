@@ -1,0 +1,56 @@
+---
+import { Button } from '@/components/react/ui'
+---
+
+<div class="bg-neutral-950 px-4 py-32 lg:px-0">
+	<div class="mx-auto max-w-md text-center">
+		<div class="flex flex-col gap-8">
+			<h2 class="text-5xl text-red-600" style="font-family: Calibri">
+				Audiophile Engineering
+			</h2>
+			<p class="text-xl text-neutral-500">
+				Designed by world class engineers <br />
+				 to ensure we deliver pristine quality
+			</p>
+			<div class="flex flex-col justify-center gap-4 lg:flex-row">
+				<Button
+					classes={{
+						button:
+							'border-transparent bg-neutral-900 px-4 py-2 hover:bg-neutral-800',
+					}}
+				>
+					Read More
+				</Button>
+				<Button
+					classes={{
+						button: 'border-transparent bg-red-600 px-4 py-2 hover:bg-red-700',
+					}}
+				>
+					Contact
+				</Button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	.card {
+		@apply min-w-[240px] overflow-hidden rounded-xl bg-neutral-950;
+	}
+	.card-image {
+		min-height: 180px;
+		background: black;
+	}
+	.card-content {
+		@apply space-y-6 p-8;
+	}
+	.card-title {
+		@apply text-lg font-bold;
+	}
+	.card-desc {
+		@apply text-neutral-400;
+	}
+	.card-button {
+		@apply rounded-lg bg-neutral-900 px-4 py-2 text-sm text-neutral-100 hover:bg-neutral-800;
+	}
+</style>

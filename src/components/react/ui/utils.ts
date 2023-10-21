@@ -75,3 +75,26 @@ function getFirstFocusableChild(
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs))
 }
+
+/**
+ * A slightly modified useState hook which allows an input to be
+ * controlled externally. If the initial value changes, the state is updated
+ *
+ * @param {T} initial the initial value for the input
+ */
+export function useValue<T = any>(
+	initial: T,
+): [T, React.Dispatch<React.SetStateAction<T>>] {
+	const [value, setValue] = useState<T>(initial)
+
+	/**
+	 *
+	 */
+	useEffect(() => {
+		if (initial !== value) {
+			setValue(initial)
+		}
+	}, [initial])
+
+	return [value, setValue]
+}

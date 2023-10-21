@@ -1,5 +1,5 @@
 ---
-import { Button } from '@/components/react/ui'
+
 ---
 
 <div class="bg-neutral-950 px-4 py-32 lg:px-0">
@@ -12,45 +12,38 @@ import { Button } from '@/components/react/ui'
 				Designed by world class engineers <br />
 				 to ensure we deliver pristine quality
 			</p>
-			<div class="flex flex-col justify-center gap-4 lg:flex-row">
-				<Button
-					classes={{
-						button:
-							'border-transparent bg-neutral-900 px-4 py-2 hover:bg-neutral-800',
-					}}
-				>
-					Read More
-				</Button>
-				<Button
-					classes={{
-						button: 'border-transparent bg-red-600 px-4 py-2 hover:bg-red-700',
-					}}
-				>
-					Contact
-				</Button>
-			</div>
+		</div>
+	</div>
+	<div class="mx-auto mt-16 max-w-5xl">
+		<div class="items grid grid-cols-1 gap-4 sm:grid-cols-2">
+			<!-- left col -->
+
+			<a class="item bg-[url(/nasa-Q1p7bh3SHj8-unsplash.jpg)]" href="/contact">
+				<div class="flex flex-col gap-2 bg-neutral-950/80 px-4 py-2">
+					<p class="text-2xl xl:text-4xl">Store Locator</p>
+					<p>Find a store near you.</p>
+				</div>
+			</a>
+			<!-- right col -->
+
+			<a
+				class="item bg-[url(/natalie-pedigo-wJK9eTiEZHY-unsplash.jpg)]"
+				href="/contact"
+			>
+				<div class="flex flex-col gap-2 bg-neutral-950/80 px-4 py-2">
+					<p class="text-2xl xl:text-4xl">Join Us</p>
+					<p>Win with us.</p>
+				</div>
+			</a>
 		</div>
 	</div>
 </div>
 
 <style>
-	.card {
-		@apply min-w-[240px] overflow-hidden rounded-xl bg-neutral-950;
+	items p {
+		font-family: Audiowide;
 	}
-	.card-image {
-		min-height: 180px;
-		background: black;
-	}
-	.card-content {
-		@apply space-y-6 p-8;
-	}
-	.card-title {
-		@apply text-lg font-bold;
-	}
-	.card-desc {
-		@apply text-neutral-400;
-	}
-	.card-button {
-		@apply rounded-lg bg-neutral-900 px-4 py-2 text-sm text-neutral-100 hover:bg-neutral-800;
+	.item {
+		@apply flex aspect-video grow items-center justify-center bg-neutral-900  bg-cover transition-colors hover:text-red-700;
 	}
 </style>

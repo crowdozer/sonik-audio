@@ -17,24 +17,26 @@ import { Button } from '@/components/react/ui'
 			</a>
 			<div class="grow"></div>
 			<div class="flex flex-row gap-2">
-				<div class="hidden lg:contents">
+				<a class="hidden lg:contents" href="/about">
 					<Button classes={{ button: 'border-transparent text-sm px-4 py-2' }}>
 						About
 					</Button>
-				</div>
-				<div class="hidden lg:contents">
+				</a>
+				<a class="hidden lg:contents" href="/contact">
 					<Button classes={{ button: 'border-transparent text-sm px-4 py-2' }}>
 						Contact
 					</Button>
-				</div>
-				<Button
-					classes={{
-						button:
-							'border-transparent bg-red-600 text-sm px-4 py-2 hover:bg-red-700',
-					}}
-				>
-					Newsletter
-				</Button>
+				</a>
+				<a href="/" class="contents">
+					<Button
+						classes={{
+							button:
+								'border-transparent bg-red-600 text-sm px-4 py-2 hover:bg-red-700',
+						}}
+					>
+						Shop
+					</Button>
+				</a>
 			</div>
 		</div>
 	</div>

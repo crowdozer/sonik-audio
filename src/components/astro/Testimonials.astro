@@ -1,0 +1,93 @@
+---
+interface Testimonial {
+	name: string
+	message: string
+	date: string
+}
+
+const col1: Testimonial[] = [
+	{
+		name: 'Sarah J.',
+		message:
+			"The subwoofers I bought from Sonik Audio completely transformed my car's sound system. I'm blown away by the quality!",
+		date: '2023-09-15',
+	},
+	{
+		name: 'Mike D.',
+		message:
+			'As a long-time car audio enthusiast, I can honestly say that Sonik Audio is a game changer. The sound clarity is unmatched.',
+		date: '2023-07-22',
+	},
+	{
+		name: 'Tiffany L.',
+		message:
+			'Their customer service is top-notch. They guided me through the entire process of setting up my new system.',
+		date: '2023-06-18',
+	},
+]
+
+const col2: Testimonial[] = [
+	{
+		name: 'Carlos M.',
+		message:
+			'I won my first competition thanks to Sonik Audio. The amps are incredibly powerful and reliable.',
+		date: '2023-05-09',
+	},
+	{
+		name: 'Rebecca S.',
+		message:
+			'The lifetime warranty gives me peace of mind. Their products are clearly built to last.',
+		date: '2023-04-03',
+	},
+	{
+		name: 'Elijah T.',
+		message:
+			"Just received my custom sound setup and I couldn't be happier. Sonik Audio really knows how to deliver a personalized experience.",
+		date: '2023-02-28',
+	},
+]
+
+const col3: Testimonial[] = [
+	{
+		name: 'Nina F.',
+		message:
+			'Sonik Audio is my go-to for all my audio needs. Their products never disappoint and the community is great!',
+		date: '2023-01-19',
+	},
+	{
+		name: 'Samuel O.',
+		message:
+			"I've tried several brands before, but nothing comes close to the quality and performance of Sonik Audio. Simply the best!",
+		date: '2022-11-10',
+	},
+	{
+		name: 'Karen W.',
+		message:
+			"I'm new to the world of car audio, but Sonik Audio made it so easy for me. Their expert consultation service is incredibly helpful.",
+		date: '2022-10-05',
+	},
+]
+---
+
+<div class="mx-auto max-w-5xl px-4 py-16 lg:px-0 lg:py-32">
+	<h1 class="mb-8 text-4xl lg:text-6xl">Testimonials</h1>
+	<div class="flex flex-col gap-4 lg:flex-row">
+		{
+			[col1, col2, col3].map((col) => (
+				<div class="flex flex-col gap-4">
+					{col.map((testimonial, index) => (
+						<div class="bg-neutral-900 p-4 lg:rounded lg:p-8">
+							<p class="mb-1 text-lg font-bold text-red-700">
+								{testimonial.name}
+							</p>
+							<p class="mb-4 text-sm text-neutral-300">
+								{new Date(testimonial.date).toDateString()}
+							</p>
+							<p>{testimonial.message}</p>
+						</div>
+					))}
+				</div>
+			))
+		}
+	</div>
+</div>

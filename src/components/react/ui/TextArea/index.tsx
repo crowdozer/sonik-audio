@@ -1,18 +1,17 @@
-import { type ReactNode } from 'react'
 import { cn, useValue } from '../utils'
 
-export interface InputProps {
+export interface TextAreaProps {
 	/**
-	 * ID of the input (optional)
+	 * ID of the textareaa (optional)
 	 * If none is provided, one is generated
 	 */
 	id?: string
 	/**
-	 * Label shown above the input (optional)
+	 * Label shown above the textarea (optional)
 	 */
 	label?: string
 	/**
-	 * Name of the input
+	 * Name of the textarea
 	 */
 	name: string
 	/**
@@ -20,15 +19,11 @@ export interface InputProps {
 	 */
 	placeholder?: string
 	/**
-	 * Value for the input
+	 * Value for the textarea
 	 */
-	value: HTMLInputElement['value']
+	value: HTMLTextAreaElement['value']
 	/**
-	 * HTML type for the input
-	 */
-	type?: HTMLInputElement['type']
-	/**
-	 * Executed on input change
+	 * Executed on textarea change
 	 *
 	 * @param value Value from the event
 	 * @param event The event
@@ -52,30 +47,28 @@ export interface InputProps {
 		wrapper?: string
 
 		/**
-		 * Applied to the input element
+		 * Applied to the textarea element
 		 */
-		input?: string
+		textarea?: string
 
 		/**
-		 * Applied to the input label
+		 * Applied to the textarea label
 		 */
 		label?: string
 	}
 
 	/**
-	 * Input HTML props to include, excluding ones already handled by standard props
+	 * Textarea HTML props to include, excluding ones already handled by standard props
 	 */
-	inputProps?: Omit<
-		React.InputHTMLAttributes<HTMLInputElement>,
+	textareaProps?: Omit<
+		React.TextareaHTMLAttributes<HTMLTextAreaElement>,
 		| 'id'
 		| 'value'
 		| 'name'
-		| 'type'
 		| 'placeholder'
 		| 'className'
 		| 'disabled'
 		| 'onChange'
-		| 'list'
 	>
 
 	/**
@@ -85,41 +78,29 @@ export interface InputProps {
 		React.HTMLAttributes<HTMLLabelElement>,
 		'className' | 'htmlFor'
 	>
-
-	/**
-	 * An optional datalist, like so:
-	 * <>
-	 * 	  <option>option 1</option>
-	 * 	  <option>option 2</option>
-	 * 	  <option>option 3</option>
-	 * </>
-	 */
-	list?: ReactNode
 }
 
-export function Input(props: InputProps) {
+export function TextArea(props: TextAreaProps) {
 	const {
 		disabled = false,
 		id = `input-${Math.random().toString(36)}`,
 		label = undefined,
-		list = undefined,
 		name,
 		onChange,
 		placeholder = undefined,
-		type = undefined,
 		value: initialValue = '',
 		width = 'max-w-full',
-		inputProps = {},
+		textareaProps = {},
 		labelProps = {},
 	} = props
-	const inputClasses = props.classes?.input || ''
+	const textareaClasses = props.classes?.textarea || ''
 	const wrapperClasses = props.classes?.wrapper || ''
 	const labelClasses = props.classes?.label || ''
 
-	const [value, setValue] = useValue<HTMLInputElement['value']>(initialValue)
+	const [value, setValue] = useValue<HTMLTextAreaElement['value']>(initialValue)
 
 	function handleChange(event: any) {
-		let value = event.target.value as HTMLInputElement['value']
+		let value = event.target.value
 		setValue(value)
 		onChange(value, event)
 	}
@@ -136,11 +117,10 @@ export function Input(props: InputProps) {
 						{label}
 					</label>
 				)}
-				<input
+				<textarea
 					id={id}
 					value={value}
 					name={name}
-					type={type}
 					placeholder={placeholder}
 					className={cn(
 						// base styles
@@ -152,14 +132,12 @@ export function Input(props: InputProps) {
 							'cursor-not-allowed opacity-50': disabled,
 						},
 						// user styles
-						inputClasses,
+						textareaClasses,
 					)}
 					disabled={disabled}
 					onChange={handleChange}
-					list={list ? `${id}-datalist` : undefined}
-					{...inputProps}
+					{...textareaProps}
 				/>
-				{list && <datalist id={`${id}-datalist`}>{list}</datalist>}
 			</div>
 		</div>
 	)

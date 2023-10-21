@@ -1,0 +1,48 @@
+---
+import Layout from '@/layouts/main.astro'
+import Contact from '@/components/react/Contact'
+import Icon from 'astro-icon'
+---
+
+<Layout title="Contact Sonik">
+	<div class="mx-auto max-w-5xl lg:py-16">
+		<div class="flex flex-col-reverse lg:grid lg:grid-cols-[1fr_2fr]">
+			<div class="lg:py-8">
+				<div
+					class="h-full space-y-8 border-l-red-600 bg-neutral-800/50 p-4 lg:border-l"
+				>
+					<div>
+						<p class="mb-2 font-bold">Address</p>
+						<Icon name="mdi:location" width="1.5rem" class="inline-block" />
+						<span class="ml-2 text-sm"
+							>123 Harmony Lane, Soundville, ST 12345</span
+						>
+					</div>
+					<div>
+						<p class="mb-2 font-bold">Phone Number</p>
+						<Icon name="mdi:phone" width="1.5rem" class="inline-block" />
+						<span class="ml-2 text-sm">(123) 456-7890</span>
+					</div>
+					<div>
+						<p class="mb-2 font-bold">Support</p>
+						<Icon name="mdi:email" width="1.5rem" class="inline-block" />
+						<span class="ml-2 text-sm">support@sonikaudio.com</span>
+					</div>
+					<div>
+						<p class="mb-2 font-bold">Inquiries</p>
+						<Icon name="mdi:email" width="1.5rem" class="inline-block" />
+						<span class="ml-2 text-sm">info@sonikaudio.com</span>
+					</div>
+					<div>
+						<p class="mb-2 font-bold">Business Hours</p>
+						<Icon name="mdi:calendar" width="1.5rem" class="inline-block" />
+						<span class="ml-2 text-sm">Monday - Friday, 9:00 AM - 5:00 PM</span>
+					</div>
+				</div>
+			</div>
+			<div class="bg-neutral-800 px-8 py-16">
+				<Contact client:load client:only />
+			</div>
+		</div>
+	</div>
+</Layout>

@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon'
+import NewsletterForm from '@/components/react/NewsletterForm'
 
 type CategoryItem = [string, string]
 type Category = [string, CategoryItem[]]
@@ -7,76 +8,83 @@ const categories: Category[] = [
 	[
 		'Products',
 		[
-			['/speakers', 'Speakers'],
-			['/amplifiers', 'Amplifiers'],
-			['/wiring', 'Wiring'],
-			['/batteries', 'Batteries'],
+			['/', 'Speakers'],
+			['/', 'Amplifiers'],
+			['/', 'Wiring'],
+			['/', 'Batteries'],
 		],
 	],
 	[
 		'Company',
 		[
 			['/about', 'About'],
-			['/careers', 'Careers'],
-			['/mission', 'Mission'],
-			['/crew', 'Crew'],
+			['/about', 'Careers'],
+			['/about', 'Mission'],
+			['/about', 'Crew'],
 		],
 	],
 	[
 		'Info',
 		[
-			['/faq', 'FAQ'],
+			['/about', 'FAQ'],
 			['/contact', 'Contact'],
-			['/location', 'Location'],
+			['/contact', 'Location'],
 			['/terms', 'Terms'],
 		],
 	],
 ]
 ---
 
-<footer class="bg-neutral-900/30">
-	<div class="mx-auto max-w-5xl space-y-8 p-8">
-		<div class="flex flex-col gap-16 xl:flex-row">
-			{
-				categories.map(([name, entries]) => (
-					<div class="flex grow flex-col gap-4">
-						<h2 class="text-neutral-300">{name}</h2>
+<div>
+	<div class="border-t border-t-neutral-700 bg-neutral-900">
+		<NewsletterForm client:load client:only />
+	</div>
+
+	<footer class="border-t border-t-red-700 bg-neutral-900/30">
+		<div class="mx-auto max-w-5xl space-y-8 px-4 py-8 lg:px-0">
+			<div class="flex flex-col gap-16 xl:flex-row">
+				{
+					categories.map(([name, entries]) => (
 						<div class="flex grow flex-col gap-4">
-							{entries.map(([url, title]) => (
-								<div class="cursor-pointer text-sm font-bold text-neutral-400 hover:text-red-600">
-									{title}
-								</div>
-								// <a
-								// 	href={url}
-								// 	class="text-sm font-bold text-neutral-400 hover:text-red-600"
-								// >
-								// 	{title}
-								// </a>
-							))}
+							<h2 class="text-neutral-300">{name}</h2>
+							<div class="flex grow flex-col gap-4">
+								{entries.map(([url, title]) => (
+									<a
+										href={url}
+										class="text-sm font-bold text-neutral-400 hover:text-red-600"
+									>
+										{title}
+									</a>
+								))}
+							</div>
 						</div>
-					</div>
-				))
-			}
-		</div>
-		<hr />
-		<div class="flex flex-row">
-			<p class="text-sm font-bold text-neutral-400">(c) nobody 2023</p>
-			<div class="grow"></div>
-			<div class="flex flex-row gap-4">
-				<a href="https://www.x.com/" class="self-center" title="Twitter">
-					<Icon name="mdi:twitter" width="2rem" />
-				</a>
-				<a
-					href="https://www.facebook.com/"
-					class="self-center"
-					title="Facebook"
-				>
-					<Icon name="mdi:facebook" width="2rem" />
-				</a>
-				<a href="https://www.discord.com/" class="self-center" title="Discord">
-					<Icon name="mdi:discord" width="2rem" />
-				</a>
+					))
+				}
+			</div>
+			<hr />
+			<div class="flex flex-row">
+				<p class="text-sm font-bold text-neutral-400">(c) nobody 2023</p>
+				<div class="grow"></div>
+				<div class="flex flex-row gap-4">
+					<a href="https://www.x.com/" class="self-center" title="Twitter">
+						<Icon name="mdi:twitter" width="2rem" />
+					</a>
+					<a
+						href="https://www.facebook.com/"
+						class="self-center"
+						title="Facebook"
+					>
+						<Icon name="mdi:facebook" width="2rem" />
+					</a>
+					<a
+						href="https://www.discord.com/"
+						class="self-center"
+						title="Discord"
+					>
+						<Icon name="mdi:discord" width="2rem" />
+					</a>
+				</div>
 			</div>
 		</div>
-	</div>
-</footer>
+	</footer>
+</div>

@@ -1,0 +1,111 @@
+---
+import Main from '@/layouts/main.astro'
+
+interface Props {
+	title: string
+}
+
+const { title } = Astro.props
+---
+
+<Main {title}>
+	<article class="mx-auto my-16 max-w-2xl">
+		<slot />
+	</article>
+</Main>
+
+<style is:global>
+	article p {
+		@apply mb-4;
+	}
+
+	article h1,
+	article h2,
+	article h3,
+	article h4,
+	article h5 {
+		@apply mb-4 mt-8 tracking-wider;
+	}
+
+	article h5 {
+		@apply text-xl;
+	}
+
+	article h4 {
+		@apply text-2xl;
+	}
+
+	article h3 {
+		@apply text-3xl;
+		line-height: 3rem;
+	}
+
+	article h2 {
+		@apply text-4xl;
+		line-height: 3.5rem;
+	}
+
+	article h1 {
+		@apply text-5xl;
+		line-height: 4rem;
+	}
+
+	article pre {
+		@apply my-4 overflow-x-hidden p-8 font-mono;
+	}
+
+	article pre {
+		/* Initialize the counter */
+		counter-reset: line-numbers;
+	}
+
+	article span.line {
+		@apply whitespace-pre-wrap;
+	}
+
+	article span.line::before {
+		/* Increment the counter */
+		counter-increment: line-numbers;
+		content: counter(line-numbers);
+		display: inline-block;
+		width: 36px;
+		height: 100%;
+		margin-right: 1em;
+		text-align: right;
+		user-select: none;
+		opacity: 0.5;
+	}
+
+	article p > code,
+	article li > code {
+		/** h-0 inline-block fixes paragraph line heights */
+		@apply inline-block h-0 font-mono text-green-500;
+	}
+
+	article ol,
+	article ul {
+		@apply mb-8 list-disc;
+	}
+
+	article ol > li {
+		/** ml-12 pr-12 condenses the list without leaving behind the bullets */
+		@apply -mb-2 ml-12 pr-12;
+	}
+
+	article ul > li {
+		/** ml-12 pr-12 condenses the list without leaving behind the bullets */
+		@apply ml-12 pr-12;
+	}
+
+	article sup {
+		@apply mb-2;
+	}
+
+	article hr {
+		@apply my-4;
+	}
+
+	article a {
+		@apply text-red-600 hover:text-red-700;
+	}
+</style>

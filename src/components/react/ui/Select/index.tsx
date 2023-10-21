@@ -1,5 +1,5 @@
-import { useState, type ReactNode } from 'react'
-import { cn } from '../utils'
+import { type ReactNode } from 'react'
+import { cn, useValue } from '../utils'
 
 export interface SelectProps {
 	/**
@@ -110,7 +110,7 @@ export function Select(props: SelectProps) {
 	const wrapperClasses = props.classes?.wrapper || ''
 	const labelClasses = props.classes?.label || ''
 
-	const [value, setValue] = useState<HTMLSelectElement['value']>(initialValue)
+	const [value, setValue] = useValue<HTMLSelectElement['value']>(initialValue)
 
 	function handleChange(event: any) {
 		let value = event.target.value

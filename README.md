@@ -2,6 +2,8 @@
 
 This is demo repository, using React, Astro, and Tailwind CSS.
 
+[https://sonik-audio.vercel.app/](https://sonik-audio.vercel.app/)
+
 # Astro Starter Kit: Minimal
 
 ```sh

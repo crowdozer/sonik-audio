@@ -5,6 +5,7 @@
 @font-face {
 	font-family: Audiowide;
 	src: url(/Audiowide-Regular.ttf);
+	font-display: swap;
 }
 
 /**

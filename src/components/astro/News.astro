@@ -21,12 +21,16 @@ const first = allBlogPosts.reverse().shift()!
 				<div class="flex flex-col md:flex-row">
 					<img
 						src={first.data.image}
+						alt={first.data.imgAlt}
+						loading="lazy"
 						class="hidden h-auto flex-shrink-0 object-cover md:block"
 						style="width: calc(33% + 0.5rem);"
 					/>
 
 					<img
 						src={first.data.image}
+						alt={first.data.imgAlt}
+						loading="lazy"
 						class="block max-h-[320px] flex-shrink-0 object-cover md:hidden"
 					/>
 
@@ -56,6 +60,8 @@ const first = allBlogPosts.reverse().shift()!
 					<a href={`/blog/${post.slug}`} class="flex flex-col">
 						<img
 							src={post.data.image}
+							alt={post.data.imgAlt}
+							loading="lazy"
 							class="mx-auto h-auto max-h-[320px] w-full flex-shrink-0 object-cover lg:max-h-none"
 						/>
 						<div class="flex min-h-[300px] grow flex-col p-4">

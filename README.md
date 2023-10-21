@@ -1,3 +1,7 @@
+# Sonik Audio
+
+This is demo repository, using React, Astro, and Tailwind CSS.
+
 # Astro Starter Kit: Minimal
 
 ```sh

@@ -41,6 +41,6 @@ Join a global community of audio enthusiasts who share your passion for unparall
 
 Feel the difference of a competition-grade audio experience. Visit our store or contact us to become a part of the Sonik Audio legacy.
 
-[Contact Us](/about)
+[Contact Us](/contact)
 
 We look forward to delivering the ultimate auditory thrill that you've been searching for. Welcome to the Sonik Audio family.
